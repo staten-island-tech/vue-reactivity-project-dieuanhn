@@ -1,5 +1,14 @@
 <template>
 <div class="car-box">
-    <img src="original.PNG">
 </div>
 </template>
+
+<script>
+export default {
+  name: 'car',
+  props: {
+    msg: String
+  }
+}
+</script>
+
