@@ -1,5 +1,6 @@
 <template>
 <div class="car-box">
+  <img src="./assets/original.png">
 </div>
 </template>
 
