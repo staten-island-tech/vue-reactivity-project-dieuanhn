@@ -1,6 +1,6 @@
 <template>
 <div class="car-box">
-  <img src="./assets/original.png">
+  <img src="../assets/car.png" alt="car image">
 </div>
 </template>
 
@@ -12,4 +12,8 @@ export default {
   }
 }
 </script>
+
+<style>
+
+</style>
 
