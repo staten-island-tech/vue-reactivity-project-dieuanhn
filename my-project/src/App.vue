@@ -5,20 +5,25 @@
         <h1>DESIGN YOUR OWN F1 CAR</h1>
       </div>
       <car/>
+      <options/>
     </div>
   </div>
  
 </template>
 
 <script>
-import car from './components/car.vue'
+import car from './components/car.vue' 
+import options from './components/options.vue'
 
 export default {
   name: 'App',
   components: {
-    car
+    car,
+    options
   }
 }
+
+
 </script>
   
 
