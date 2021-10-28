@@ -9,8 +9,20 @@ export default {
   name: 'car',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      testArray: [
+        {
+          name: "Hello",
+        }
+      ]
+    }
   }
 }
+
+
+
 </script>
 
 <style>
