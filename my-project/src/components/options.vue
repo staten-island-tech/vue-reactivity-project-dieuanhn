@@ -1,22 +1,26 @@
 <template>
-    <div class="options-bar">
-    <btn class="">?</btn>
-    </div>
+<div id="option">
+<h2>
+Chose A Main Color: {{ mainColors }}
+</h2>
+</div> 
+
+
+  
 </template>
 
 <script>
 export default {
   name: 'options',
-  props: {
-    msg: String
+
+  data() {
+    return {
+      mainColors: ['red', 'blue', 'orange', 'green', 'purple', 'pink'],    
+      secondaryColors: ['red', 'blue', 'orange', 'green', 'purple', 'pink'], 
+      accentColors: ['white', 'black', 'grey'], 
+      wheelColors: ['blue', 'white', 'green', 'blue', 'yellow']
+      }
   }
 }
-
-data(); {
-  mainColors: ['red', 'blue', 'orange', 'green', 'purple', 'pink']
-  secondaryColors: ['red', 'blue', 'orange', 'green', 'purple', 'pink']
-  accentColors: ['white', 'black', 'grey']
-  wheelColors: ['blue', 'white', 'green', 'blue', 'yellow']
-}
-
+ 
 </script>
