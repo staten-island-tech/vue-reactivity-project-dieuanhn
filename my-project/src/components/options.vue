@@ -33,11 +33,11 @@ export default {
         image: require('../assets/main/mainOrange.PNG')
       },
       {
-        mainColor: "Green", 
+        name: "Green", 
         image: require('../assets/main/mainGreen.PNG')
       },
       {
-      mainColor: "Purple", 
+        name: "Purple", 
         image: require('../assets/main/mainPurple.PNG')
       },
      ], 
@@ -60,16 +60,16 @@ export default {
         image: require('../assets/secondary/secondaryOrange.PNG')
       },
       {
-        mainColor: "Green", 
+        name: "Green", 
         image: require('../assets/secondary/secondaryGreen.PNG')
       },
       {
-      mainColor: "Purple", 
+        name: "Purple", 
         image: require('../assets/secondary/secondaryPurple.PNG')
       },
      ], 
 
-    accentColors: [
+      accentColors: [
       { 
         name: "White", 
         image: require('../assets/accent/accentWhite.PNG') 
@@ -102,7 +102,7 @@ export default {
         image: require('../assets/wheels/wheelsSoft.PNG')
       },
       {
-        mainColor: "Wet", 
+        name: "Wet", 
         image: require('../assets/wheels/wheelsWet.PNG')
       },
      ],     
