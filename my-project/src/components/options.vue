@@ -15,27 +15,27 @@ export default {
       mainColors: [
         {
           name: "Red",
-          image: require("../assets/main/mainred.png"),
+          image: require("../assets/main/mainRed.png"),
         },
         {
           name: "Blue",
-          image: require("../assets/main/mainblue.png"),
+          image: require("../assets/main/mainBlue.png"),
         },
         {
           name: "Pink",
-          image: require("../assets/main/mainpink.png"),
+          image: require("../assets/main/mainPink.png"),
         },
         {
           name: "Orange",
-          image: require("../assets/main/mainorange.png"),
+          image: require("../assets/main/mainOrange.png"),
         },
         {
           name: "Green",
-          image: require("../assets/main/maingreen.png"),
+          image: require("../assets/main/mainGreen.png"),
         },
         {
           name: "Purple",
-          image: require("../assets/main/mainpurple.png"),
+          image: require("../assets/main/mainPurple.png"),
         },
       ],
 
@@ -69,7 +69,7 @@ export default {
       accentColors: [
         {
           name: "White",
-          image: require("../assets/accent/whiteAccent.png"),
+          image: require("../assets/accent/whiteA.png"),
         },
         {
           name: "Black",
@@ -77,7 +77,7 @@ export default {
         },
         {
           name: "Grey",
-          image: require("../assets/accent/accentGrey.png"),
+          image: require("../assets/accent/greyA.png"),
         },
       ],
 
