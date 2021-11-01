@@ -4,26 +4,23 @@
       <div class="title">
         <h1>DESIGN YOUR OWN F1 CAR</h1>
       </div>
-      <car/>
-      <options/>
+      <car />
+      <Options />
     </div>
   </div>
- 
 </template>
 
 <script>
-import car from './components/car.vue' 
-import options from './components/options.vue'
+import car from "./components/car.vue";
+import Options from "./components/Options.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     car,
-    options
-  }
-}
-
-
+    Options,
+  },
+};
 </script>
   
 
