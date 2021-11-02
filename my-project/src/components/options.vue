@@ -1,7 +1,10 @@
 <template>
   <div class="color-options">
+    
     <h1>Main Colors:</h1>
-      <btn class="main-color" v-for="mainColor in mainColors" :key="mainColor.name"> {{mainColor.name}} </btn>
+      <img v-for="mainColorImage in mainColors" :key="mainColorImage.image" v-bind:src="mainColors.image">
+      <btn @click="myFunction()" class="main-color" v-for="mainColor in mainColors" :key="mainColor.name"> {{mainColor.name}} </btn>
+    
     <h1>Secondary Colors:</h1>
       <btn class="secondary-color" v-for="secondaryColor in secondaryColors" :key="secondaryColor.name"> {{secondaryColor.name}} </btn>
     <h1>Accent Colors:</h1>
@@ -114,11 +117,15 @@ export default {
     };
    },
 
-  methods: {
+methods: {
   
+myFunction: function () {	
+		this.image = ""
+}, 
 
-    }
-};
+}, 
+
+  
 </script>
 
 <style>
