@@ -1,6 +1,14 @@
 <template>
-  <div>
-    <btn class="main-color" v-for="mainColor in mainColors" :key="mainColor.name"> {{mainColor.name}} </btn>
+  <div class="color-options">
+    <h1>Main Colors:</h1>
+      <btn class="main-color" v-for="mainColor in mainColors" :key="mainColor.name"> {{mainColor.name}} </btn>
+    <h1>Secondary Colors:</h1>
+      <btn class="secondary-color" v-for="secondaryColor in secondaryColors" :key="secondaryColor.name"> {{secondaryColor.name}} </btn>
+    <h1>Accent Colors:</h1>
+      <btn class="accent-color" v-for="accentColor in accentColors" :key="accentColor.name"> {{accentColor.name}} </btn>
+    <h1>Chose A Wheel Type:</h1>
+      <btn class="wheel-type" v-for="wheelType in wheelTypes" :key="wheelType.name"> {{wheelType.name}} </btn>
+    <img style="display:none;" id="image" src="image">
   </div>
   </template>
   
@@ -104,7 +112,12 @@ export default {
         },
       ],
     };
-  },
+   },
+
+  methods: {
+  
+
+    }
 };
 </script>
 
