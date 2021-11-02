@@ -1,10 +1,10 @@
 <template>
-  <div id="option">
-    <h2>
-      {{ mainColors }}
-    </h2>
+  <div>
+    <btn class="main-color" v-for="mainColor in mainColors" :key="mainColor.name"> {{mainColor.name}} </btn>
   </div>
-</template>
+  </template>
+  
+
 
 <script>
 export default {
@@ -16,7 +16,7 @@ export default {
         {
           name: "Red",
           image: require("../assets/main/mainRed.png"),
-        },
+        }, 
         {
           name: "Blue",
           image: require("../assets/main/mainBlue.png"),
@@ -107,3 +107,11 @@ export default {
   },
 };
 </script>
+
+<style>
+
+.main-color {
+  padding: 5px;
+}
+
+</style>
