@@ -1,7 +1,7 @@
 <template>
   <div class="color">
   <div class="color-options">
-  <h1>Main Colors:</h1>
+  <h2>Main Colors:</h2>
   <ul>
     <li 
     class="main-color" 
@@ -10,7 +10,7 @@
     </li>
    </ul>
 
-   <h1>Secondary Colors:</h1>
+   <h2>Secondary Colors:</h2>
   <ul>
     <li 
     class="secondary-color" 
@@ -19,7 +19,7 @@
     </li>
   </ul>
 
-  <h1>Accent Colors:</h1>
+  <h2>Accent Colors:</h2>
   <ul>
     <li 
     class="accent-color" 
@@ -28,7 +28,7 @@
     </li>
    </ul>
 
-  <h1>Chose A Wheel Type:</h1>
+  <h2>Chose A Wheel Type:</h2>
   <ul>
     <li 
     class="wheel-type" 
@@ -208,8 +208,8 @@ img {
   max-width: 700px;  
   max-height: 700px;
   position: absolute;
-  top: 0;
-  left: 0px;
+  top: 100px;
+  left: 230px;
 }
 
 .color-options {
@@ -220,7 +220,7 @@ img {
 
 .color {
   padding-left: 60px; 
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .main-color, .secondary-color, .accent-color, .wheel-type {
