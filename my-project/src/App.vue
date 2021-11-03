@@ -4,20 +4,17 @@
       <div class="title">
         <h1>DESIGN YOUR OWN F1 CAR</h1>
       </div>
-      <car />
       <Options />
     </div>
   </div>
 </template>
 
 <script>
-import car from "./components/car.vue";
 import Options from "./components/Options.vue";
 
 export default {
   name: "App",
   components: {
-    car,
     Options,
   },
 };
@@ -40,4 +37,6 @@ body {
   font-size: 20px;
   letter-spacing: 3px;
 }
+
+
 </style>

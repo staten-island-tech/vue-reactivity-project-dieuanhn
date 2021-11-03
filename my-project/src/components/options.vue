@@ -1,6 +1,5 @@
 <template>
   <div class="color">
-
   <div class="color-options">
   <h1>Main Colors:</h1>
   <ul>
@@ -208,7 +207,24 @@ export default {
 img {
   max-width: 700px;  
   max-height: 700px;
+  position: absolute;
+  top: 0;
+  left: 0px;
 }
 
+.color-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.color {
+  padding-left: 60px; 
+  margin-top: 10px;
+}
+
+.main-color, .secondary-color, .accent-color, .wheel-type {
+  list-style: none;
+}
 
 </style>
