@@ -5,8 +5,8 @@
   <ul>
     <li 
     class="main-color" 
-    v-for="(mainColor, position) in possibleMainColors" 
-    :key="position" v-on:click="addMainImage"> {{mainColor.name}} 
+    v-for="mainColor in mainColorsChoices" 
+    :key="mainColor.name" v-on:click="addMainImage"> {{mainColor.name}} 
     </li>
    </ul>
 
@@ -14,8 +14,8 @@
   <ul>
     <li 
     class="secondary-color" 
-    v-for="(secondaryColor, position) in possibleSecondaryColors" 
-    :key="position" v-on:click="addSecondaryImage"> {{secondaryColor.name}} 
+    v-for="secondaryColor in secondaryColorsChoices" 
+    :key="secondaryColor.name" v-on:click="addSecondaryImage"> {{secondaryColor.name}} 
     </li>
   </ul>
 
@@ -23,8 +23,8 @@
   <ul>
     <li 
     class="accent-color" 
-    v-for="(accentColor, position) in possibleAccentColors" 
-    :key="position" v-on:click="addAccentImage"> {{accentColor.name}} 
+    v-for="accentColor in accentColorsChoices" 
+    :key="accentColor.name" v-on:click="addAccentImage"> {{accentColor.name}} 
     </li>
    </ul>
 
@@ -32,30 +32,30 @@
   <ul>
     <li 
     class="wheel-type" 
-    v-for="(wheelType, position) in possibleWheelTypes" 
-    :key="position" v-on:click="addWheelImage"> {{wheelType.name}} 
+    v-for="wheelType in wheelTypesChoices" 
+    :key="wheelType.name" v-on:click="addWheelImage"> {{wheelType.name}} 
     </li>
    </ul>
   </div>
 
   <div class="color-image">
   <ul>
-    <div class="main-image" v-for="(mainColor, position) in mainColors" :key="position">
+    <div class="main-image" v-for="mainColor in mainColorsSelected" :key="mainColor.image">
     <img :src="mainColor.image" alt="" />
     </div>
   </ul>
   <ul>
-    <div class="secondary-image" v-for="(secondaryColor, position) in secondaryColors" :key="position">
+    <div class="secondary-image" v-for="secondaryColor in secondaryColorsSelected" :key="secondaryColor.image">
     <img :src="secondaryColor.image" alt="" />
     </div>
   </ul>
   <ul>
-    <div class="accent-image" v-for="(accentColor, position) in accentColors" :key="position">
+    <div class="accent-image" v-for="accentColor in accentColorsSelected" :key="accentColor.image">
     <img :src="accentColor.image" alt="" />
     </div>
   </ul>
   <ul>
-    <div class="wheel-image" v-for="(wheelType, position) in wheelTypes" :key="position">
+    <div class="wheel-image" v-for="wheelType in wheelTypesSelected" :key="wheelType.image">
     <img :src="wheelType.image" alt="" />
     </div>
   </ul>
@@ -72,8 +72,8 @@ export default {
 
   data() {
     return {
-      mainColors: [],
-      possibleMainColors: [
+      mainColorsSelected: [],
+      mainColorsChoices: [
         {
           name: "Red",
           image: require("../assets/main/mainRed.png"),
@@ -100,8 +100,8 @@ export default {
         },
       ],
 
-      secondaryColors: [], 
-      possibleSecondaryColors: [
+      secondaryColorsSelected: [], 
+      secondaryColorsChoices: [
         {
           name: "Red",
           image: require("../assets/secondary/redSecondary.png"),
@@ -127,9 +127,10 @@ export default {
           image: require("../assets/secondary/purpleS.png"),
         },
       ],
+      
 
-      accentColors: [], 
-      possibleAccentColors: [
+      accentColorsSelected: [], 
+      accentColorsChoices: [
         {
           name: "White",
           image: require("../assets/accent/whiteA.png"),
@@ -144,8 +145,8 @@ export default {
         },
       ],
 
-      wheelTypes: [],
-      possibleWheelTypes: [
+      wheelTypesSelected: [],
+      wheelTypesChoices: [
         {
           name: "Hard",
           image: require("../assets/wheels/wheelsHard.png"),
@@ -172,27 +173,27 @@ export default {
 
   methods: {
     addMainImage: function (event) {
-    const img = event.target.innerText;
-    const found = this.possibleMainColors.filter((el) => el.name === img);
-    this.mainColors.push(found[0]);
+    let img = event.target.innerText;
+    let added = this.mainColorsChoices.filter(element => element.name === img);
+    this.mainColorsSelected.push(added[0]);
     },
 
     addSecondaryImage: function (event) {
-    const img = event.target.innerText;
-    const found = this.possibleSecondaryColors.filter((el) => el.name === img);
-    this.secondaryColors.push(found[0]);
+    let img = event.target.innerText;
+    let added = this.secondaryColorsChoices.filter(element => element.name === img);
+    this.secondaryColorsSelected.push(added[0]);
     },
 
     addAccentImage: function (event) {
-    const img = event.target.innerText;
-    const found = this.possibleAccentColors.filter((el) => el.name === img);
-    this.accentColors.push(found[0]);
+    let img = event.target.innerText;
+    let added = this.accentColorsChoices.filter(element => element.name === img);
+    this.accentColorsSelected.push(added[0]);
     },
 
     addWheelImage: function (event) {
-    const img = event.target.innerText;
-    const found = this.possibleWheelTypes.filter((el) => el.name === img);
-    this.wheelTypes.push(found[0]);
+    let img = event.target.innerText;
+    let added = this.wheelTypesChoices.filter(element => element.name === img);
+    this.wheelTypesSelected.push(added[0]);
     },
   },
 
