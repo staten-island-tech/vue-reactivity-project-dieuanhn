@@ -1,27 +1,67 @@
 <template>
-  <div class="color-options">
+  <div class="color">
 
-    <h1>Main Colors:</h1>
-    <ul>
+  <div class="color-options">
+  <h1>Main Colors:</h1>
+  <ul>
     <li 
     class="main-color" 
     v-for="(mainColor, position) in possibleMainColors" 
-    :key="position" v-on:click="addImage"> {{mainColor.name}} 
+    :key="position" v-on:click="addMainImage"> {{mainColor.name}} 
     </li>
-    </ul>
-  <ul>
-  <div v-for="(mainColor, position) in mainColors" :key="position">
-    <img :src="mainColor.image" alt="" />
-  </div>
-  </ul>
-    
-    <h1>Secondary Colors:</h1>
-      <btn class="secondary-color" v-for="secondaryColor in secondaryColors" :key="secondaryColor.name"> {{secondaryColor.name}} </btn>
-    <h1>Accent Colors:</h1>
-      <btn class="accent-color" v-for="accentColor in accentColors" :key="accentColor.name"> {{accentColor.name}} </btn>
-    <h1>Chose A Wheel Type:</h1>
-      <btn class="wheel-type" v-for="wheelType in wheelTypes" :key="wheelType.name"> {{wheelType.name}} </btn>
+   </ul>
 
+   <h1>Secondary Colors:</h1>
+  <ul>
+    <li 
+    class="secondary-color" 
+    v-for="(secondaryColor, position) in possibleSecondaryColors" 
+    :key="position" v-on:click="addSecondaryImage"> {{secondaryColor.name}} 
+    </li>
+  </ul>
+
+  <h1>Accent Colors:</h1>
+  <ul>
+    <li 
+    class="accent-color" 
+    v-for="(accentColor, position) in possibleAccentColors" 
+    :key="position" v-on:click="addAccentImage"> {{accentColor.name}} 
+    </li>
+   </ul>
+
+  <h1>Chose A Wheel Type:</h1>
+  <ul>
+    <li 
+    class="wheel-type" 
+    v-for="(wheelType, position) in possibleWheelTypes" 
+    :key="position" v-on:click="addWheelImage"> {{wheelType.name}} 
+    </li>
+   </ul>
+  </div>
+
+  <div class="color-image">
+  <ul>
+    <div class="main-image" v-for="(mainColor, position) in mainColors" :key="position">
+    <img :src="mainColor.image" alt="" />
+    </div>
+  </ul>
+  <ul>
+    <div class="secondary-image" v-for="(secondaryColor, position) in secondaryColors" :key="position">
+    <img :src="secondaryColor.image" alt="" />
+    </div>
+  </ul>
+  <ul>
+    <div class="accent-image" v-for="(accentColor, position) in accentColors" :key="position">
+    <img :src="accentColor.image" alt="" />
+    </div>
+  </ul>
+  <ul>
+    <div class="wheel-image" v-for="(wheelType, position) in wheelTypes" :key="position">
+    <img :src="wheelType.image" alt="" />
+    </div>
+  </ul>
+  </div>
+   
   </div>
   </template>
   
@@ -61,7 +101,8 @@ export default {
         },
       ],
 
-      secondaryColors: [
+      secondaryColors: [], 
+      possibleSecondaryColors: [
         {
           name: "Red",
           image: require("../assets/secondary/redSecondary.png"),
@@ -88,7 +129,8 @@ export default {
         },
       ],
 
-      accentColors: [
+      accentColors: [], 
+      possibleAccentColors: [
         {
           name: "White",
           image: require("../assets/accent/whiteA.png"),
@@ -103,7 +145,8 @@ export default {
         },
       ],
 
-      wheelTypes: [
+      wheelTypes: [],
+      possibleWheelTypes: [
         {
           name: "Hard",
           image: require("../assets/wheels/wheelsHard.png"),
@@ -129,10 +172,28 @@ export default {
    },
 
   methods: {
-    addImage: function (event) {
-      const img = event.target.innerText;
-      const found = this.possibleMainColors.filter((el) => el.name === img);
-      this.mainColors.push(found[0]);
+    addMainImage: function (event) {
+    const img = event.target.innerText;
+    const found = this.possibleMainColors.filter((el) => el.name === img);
+    this.mainColors.push(found[0]);
+    },
+
+    addSecondaryImage: function (event) {
+    const img = event.target.innerText;
+    const found = this.possibleSecondaryColors.filter((el) => el.name === img);
+    this.secondaryColors.push(found[0]);
+    },
+
+    addAccentImage: function (event) {
+    const img = event.target.innerText;
+    const found = this.possibleAccentColors.filter((el) => el.name === img);
+    this.accentColors.push(found[0]);
+    },
+
+    addWheelImage: function (event) {
+    const img = event.target.innerText;
+    const found = this.possibleWheelTypes.filter((el) => el.name === img);
+    this.wheelTypes.push(found[0]);
     },
   },
 
@@ -144,8 +205,10 @@ export default {
 
 <style>
 
-.main-color {
-  padding: 5px;
+img {
+  max-width: 700px;  
+  max-height: 700px;
 }
+
 
 </style>
