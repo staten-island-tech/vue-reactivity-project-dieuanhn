@@ -220,7 +220,7 @@ img {
 
 .color {
   padding-left: 60px; 
-  margin-top: 15px;
+  margin-top: 80px;
 }
 
 .main-color, .secondary-color, .accent-color, .wheel-type {
