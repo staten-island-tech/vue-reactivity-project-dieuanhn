@@ -3,7 +3,7 @@
     <div class="header">
       <div class="title">
         <h1>DESIGN YOUR OWN F1 CAR</h1>
-      </div> 
+      </div>
       <Options />
     </div>
   </div>
