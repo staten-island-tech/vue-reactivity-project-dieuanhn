@@ -1,9 +1,19 @@
 <template>
   <div class="color-options">
-    
+
     <h1>Main Colors:</h1>
-      <img v-for="mainColorImage in mainColors" :key="mainColorImage.image" v-bind:src="mainColors.image">
-      <btn @click="myFunction()" class="main-color" v-for="mainColor in mainColors" :key="mainColor.name"> {{mainColor.name}} </btn>
+    <ul>
+    <li 
+    class="main-color" 
+    v-for="(mainColor, position) in possibleMainColors" 
+    :key="position" v-on:click="addImage"> {{mainColor.name}} 
+    </li>
+    </ul>
+  <ul>
+  <div v-for="(mainColor, position) in mainColors" :key="position">
+    <img :src="mainColor.image" alt="" />
+  </div>
+  </ul>
     
     <h1>Secondary Colors:</h1>
       <btn class="secondary-color" v-for="secondaryColor in secondaryColors" :key="secondaryColor.name"> {{secondaryColor.name}} </btn>
@@ -11,7 +21,7 @@
       <btn class="accent-color" v-for="accentColor in accentColors" :key="accentColor.name"> {{accentColor.name}} </btn>
     <h1>Chose A Wheel Type:</h1>
       <btn class="wheel-type" v-for="wheelType in wheelTypes" :key="wheelType.name"> {{wheelType.name}} </btn>
-    <img style="display:none;" id="image" src="image">
+
   </div>
   </template>
   
@@ -23,7 +33,8 @@ export default {
 
   data() {
     return {
-      mainColors: [
+      mainColors: [],
+      possibleMainColors: [
         {
           name: "Red",
           image: require("../assets/main/mainRed.png"),
@@ -117,13 +128,16 @@ export default {
     };
    },
 
-methods: {
-  
-myFunction: function () {	
-		this.image = ""
-}, 
+  methods: {
+    addImage: function (event) {
+      const img = event.target.innerText;
+      const found = this.possibleMainColors.filter((el) => el.name === img);
+      this.mainColors.push(found[0]);
+    },
+  },
 
-}, 
+}; 
+
 
   
 </script>
