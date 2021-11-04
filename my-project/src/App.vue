@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import Options from "./components/Options.vue";
+import Options from "./components/options.vue";
 
 export default {
   name: "App",
   components: {
-    Options,
+    options,
   },
 };
 </script>

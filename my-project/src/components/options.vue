@@ -68,7 +68,7 @@
 
 <script>
 export default {
-  name: "Options",
+  name: "options",
 
   data() {
     return {
