@@ -91,7 +91,7 @@ export default {
           image: require("../assets/main/mainOrange.png"),
         },
         {
-          name: "Green",
+          name: "Greeen",
           image: require("../assets/main/mainGreen.png"),
         },
         {
