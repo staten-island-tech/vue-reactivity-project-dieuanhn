@@ -4,13 +4,13 @@
       <div class="title">
         <h1>DESIGN YOUR OWN F1 CAR</h1>
       </div>
-      <Options />
+      <options />
     </div>
   </div>
 </template>
 
 <script>
-import Options from "./components/options.vue";
+import options from "./components/options.vue";
 
 export default {
   name: "App",
